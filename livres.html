@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <title>javascript: calculate two numbers</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+        <title>livres</title>
+    
+    </head>
+    <style>
+.bg{
+    
+         border:0px solid #fff;
+         width: 30%;
+  padding: 100px 60px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+  color: white;
+}
+.img{
+position: center;
+ top: 40px; 
+  width: 45%;
+  height: 45%;
+  left: 330px;
+}
+    </style>
+    <body>
+       <div class="container-fluid bg">
+           <div class="image">
+        <img class="img" src="livre.jpg" alt="">
+    </div> 
+        <select  class="form-control" id="copies"   onselect="calc();" >
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="300">300</option>
+            <option value="500">500</option>
+        </select>>
+        <input type="number" class="form-control" id="x" oninput="calc()" required placeholder=" Nombres de pages " /> <br>
+          <button class="form-control btn-primary" onclick="calc();">Voir le resultat </button> <br>
+        <input type="number" class="form-control" id="result" disabled placeholder="montant..."/>
+
+    </div>  
+    </body>
+        
+        <script>
+            
+            function calc()
+            {
+                var x = parseFloat(document.getElementById('x').value);
+               
+                
+                var copies = document.getElementById('copies').value;
+                
+                if(copies === '100')
+                {
+                    document.getElementById('result').value = x*(1.2*100)+x*15+1000+1200+17000+3500;
+                }
+                
+                if(copies === '200')
+                {
+                    document.getElementById('result').value = x*(0.9*200)+x*15+1000+1200+27000+7000;
+                }
+                
+                if(copies === '300')
+                {
+                    document.getElementById('result').value = x*(0.6*300)+x*15+1000+1200+31000+9000;
+                }
+                
+                if(copies === '500')
+                {
+                    document.getElementById('result').value = x*(0.6*500)+x*15+1000+1200+44000+17500;
+                }
+            }
+            
+        </script>
+        
+   
+</html>
